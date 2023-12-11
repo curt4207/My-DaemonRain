@@ -1,0 +1,119 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Daemon</title>
+    <style>
+      canvas {
+        max-width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      h1 {
+        z-index: 100;
+      }
+      .text {
+        font-size: 100px;
+        color: rgb(235, 14, 14);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1 id="text" class="text">HELP</h1>
+      <img id="background" alt="background" src="background" />
+      <button id="playButton">Play Audio</button>
+    </section>
+
+    <script src="rainyday.js"></script>
+    <audio id="myAudio" src="audio.mp3" autoplay loop controls></audio>
+    
+    <script>
+      let myAudio = document.querySelector('#audio')
+      const playButton = document.getElementById("playButton");
+const audioElement = document.getElementById("myAudio");
+
+playButton.addEventListener("click", function() {
+  audioElement.play();
+});
+
+      function rain() {
+        const myImage = "MyDaemon.jpg";
+        const image = document.getElementById("background");
+        image.onload = function () {
+          let rainDay = RainyDay({ image: this });
+          // RainyDay.rain([[5, 2, 2]], 100);
+        };
+        image.src = myImage;
+      }
+      myAudio.play()
+      rain();
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>My Daemon</title>
+  <style>
+    canvas {
+      max-width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    h1 {
+      z-index: 100;
+    }
+
+    .text {
+      font-size: 100px;
+      color: rgb(235, 14, 14);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1 id="text" class="text">HELP</h1>
+    <img id="background" alt="background" src="background" />
+    <button id="playButton">Play Audio</button>
+  
+  </section>
+  <script src="rainyday.js"></script>
+  <audio id="myAudio" src="Rains.mp3" autoplay loop controls volume="0.1" ></audio>
+  <script>
+    const playButton = document.getElementById("playButton");
+    const audioElement = document.getElementById("myAudio");
+    const volumeControl = document.getElementById("volumeControl");
+
+    audioElement.volume = 0.5;
+    playButton.addEventListener("click", function() {
+     
+      audioElement.play();
+    });
+
+    function rain() {
+      const myImage = "MyDaemon.jpg";
+      const image = document.getElementById("background");
+      image.onload = function() {
+        let rainDay = RainyDay({ image: this });
+        // RainyDay.rain([[5, 2, 2]], 100);
+      };
+      image.src = myImage;
+    }
+
+    rain();
+  </script>
+</body>
+</html>
